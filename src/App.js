@@ -1,12 +1,15 @@
 import "./App.css";
 import React from "react";
 import { TrelloProvider } from "./context/trelloContext";
+import List from "./components/List";
+import Header from "./components/Header";
 
 function App() {
   return (
     <TrelloProvider>
       <div className="App">
-        <div>I am creating a trello app</div>
+        <Header />
+        <List />
       </div>
     </TrelloProvider>
   );

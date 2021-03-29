@@ -8,11 +8,31 @@ const trelloReducer = (state, action) => {
 };
 
 const initialState = {
-  name: "user",
-  trellos: {
-    todos: {},
-    doing: {},
-    done: {},
+  name: "Eray Gundogmus",
+  teamName: "Programmers",
+  trellos: [
+    {
+      todos: [
+        {
+          id: 1,
+          task: "enter your todo",
+          time: undefined,
+          deadline: undefined,
+          members: undefined,
+        },
+        {
+          id: 2,
+          task: "second todo",
+          time: undefined,
+          deadline: undefined,
+          members: undefined,
+        },
+      ],
+    },
+    { doing: [] },
+  ],
+  members: {
+    name: "Me",
   },
 };
 
