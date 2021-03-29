@@ -1,10 +1,14 @@
 import "./App.css";
+import React from "react";
+import { TrelloProvider } from "./context/trelloContext";
 
 function App() {
   return (
-    <div className="App">
-      <div>I am creating a trello app</div>
-    </div>
+    <TrelloProvider>
+      <div className="App">
+        <div>I am creating a trello app</div>
+      </div>
+    </TrelloProvider>
   );
 }
 
