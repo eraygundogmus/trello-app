@@ -12,7 +12,10 @@ const initialState = {
   teamName: "Programmers",
   trellos: {
     todo: [{ id: 1, text: "create a todo" }],
-    done: [{ id: 2, text: "create a done" }],
+    done: [
+      { id: 2, text: "create a done" },
+      { id: 3, text: "my a done" },
+    ],
   },
   members: {
     name: "Me",
