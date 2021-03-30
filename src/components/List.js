@@ -4,12 +4,13 @@ import Card from "./Card";
 
 function List() {
   const myContext = useContext(trelloContext);
+  const obj = Object.keys(myContext.trellos);
   return (
-    <>
-      {myContext.trellos.map((trello) => (
-        <Card name={Object.getOwnPropertyNames(trello)} />
+    <div className="grid grid-cols-1 md:grid-cols-6">
+      {obj.map((trello, index) => (
+        <div>{myContext.trellos[trello].map((item) => item.text)}</div>
       ))}
-    </>
+    </div>
   );
 }
 
