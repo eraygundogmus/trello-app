@@ -8,7 +8,10 @@ function List() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-6">
       {obj.map((trello, index) => (
-        <div>{myContext.trellos[trello].map((item) => item.text)}</div>
+        <div>
+          <h2>{trello}</h2>
+          <div>{myContext.trellos[trello].map((item) => item.text)}</div>
+        </div>
       ))}
     </div>
   );
