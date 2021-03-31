@@ -2,6 +2,14 @@ import { createContext, useReducer } from "react";
 
 const trelloReducer = (state, action) => {
   switch (action.type) {
+    case "ADD_TODO":
+      return {
+        ...state,
+        trellos: {
+          ...state.trellos,
+          todo: [...state.trellos.todo, action.payload],
+        },
+      };
     default:
       return state;
   }

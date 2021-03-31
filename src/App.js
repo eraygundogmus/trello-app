@@ -8,7 +8,7 @@ function App() {
   return (
     <TrelloProvider>
       <div className="App">
-        <Header />
+        {/*         <Header /> */}
         <div className="container mx-auto bg-blue-100	">
           <List />
         </div>
