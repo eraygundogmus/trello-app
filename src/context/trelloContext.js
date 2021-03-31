@@ -15,6 +15,9 @@ const initialState = {
     done: [
       { id: 2, text: "create a done" },
       { id: 3, text: "my a done" },
+      { id: 4, text: "my second a done" },
+      { id: 5, text: "my third a done" },
+      { id: 6, text: "my fourth a done" },
     ],
   },
   members: {
