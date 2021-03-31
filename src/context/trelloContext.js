@@ -13,11 +13,14 @@ const initialState = {
   trellos: {
     todo: [{ id: 1, text: "create a todo" }],
     done: [
-      { id: 2, text: "create a done" },
+      {
+        id: 2,
+        text: "create a done",
+        members: ["Eray G", "Fatih U.", "Tarık G."],
+        deadline: "22.02.2222",
+        tags: ["fast", "frontend", "ui"],
+      },
       { id: 3, text: "my a done" },
-      { id: 4, text: "my second a done" },
-      { id: 5, text: "my third a done" },
-      { id: 6, text: "my fourth a done" },
     ],
   },
   members: {
