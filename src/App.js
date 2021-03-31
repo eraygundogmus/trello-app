@@ -9,7 +9,7 @@ function App() {
     <TrelloProvider>
       <div className="App">
         <Header />
-        <div className="container mx-auto h-24 bg-blue-100	">
+        <div className="container mx-auto bg-blue-100	">
           <List />
         </div>
       </div>
