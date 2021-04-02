@@ -19,7 +19,6 @@ const trelloReducer = (state, action) => {
       const objKeys = Object.keys(state.trellos);
       const find = objKeys.filter((key) => key === action.parent);
       const name = action.parent;
-
       return {
         ...state,
         trellos: {

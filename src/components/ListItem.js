@@ -2,6 +2,22 @@ import React, { useState, useContext } from "react";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { trelloContext } from "../context/trelloContext";
 
+// Note : Members, tags, checklist, deadline
+
+// todos:
+// 1 : add details on popups, add members,tags etc. in a todo details (update initialState well-matched for this)
+// 2 : style everything
+// 3 : add other reducers =>
+// add - remove tag
+// add- change- update deadline
+// add - change - update members
+// 4 : check out for bugs
+// 5 : add drag&drop
+
+// extras:
+// 1: login- auth,
+// 2: checklist
+
 function ListItem(props) {
   const [isTodoOpen, setisTodoOpen] = useState(false);
   const { dispatch } = useContext(trelloContext);
@@ -12,7 +28,6 @@ function ListItem(props) {
 
   const handleEditForm = (event) => {
     event.preventDefault();
-    console.log(editText);
     dispatch({
       type: "UPDATE_ITEM_TITLE",
       payload: props.drill.id,
@@ -31,8 +46,6 @@ function ListItem(props) {
     setisTodoOpen(false);
   };
 
-  // Note : Members, tags, checklist, deadline
-
   return (
     <div className="py-2">
       {isEditOpen ? (
@@ -40,7 +53,7 @@ function ListItem(props) {
           <p onClick={() => setisTodoOpen(true)}>
             {data.text} {data.deadline ? data.deadline : null}
           </p>
-          <AiFillEdit onClick={(event) => setisEditOpen(false)} />{" "}
+          <AiFillEdit onClick={(event) => setisEditOpen(false)} />
         </div>
       ) : (
         <div>
@@ -53,6 +66,7 @@ function ListItem(props) {
             ></input>
             <button className="main">Save</button>
           </form>
+          <button onClick={(event) => setisEditOpen(true)}>Close</button>
         </div>
       )}
 

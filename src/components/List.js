@@ -14,17 +14,14 @@ function List() {
   const [isNewListOpen, setisNewListOpen] = useState(false);
   const [newListName, setNewListName] = useState("");
 
-  // console.log(myContext);
   const onSubmit = (event) => {
     event.preventDefault();
-
     const newTodo = {
       id: uuidv4(),
       text: todoText,
       members: undefined,
       deadline: todoDate,
     };
-
     dispatch({
       type: "ADD_TODO",
       payload: newTodo,
@@ -33,7 +30,6 @@ function List() {
 
   const newCardSubmit = (event) => {
     event.preventDefault();
-
     const name = newListName;
     const newList = [];
     dispatch({
@@ -53,7 +49,6 @@ function List() {
             {myContext.trellos[trello].map((item) => (
               <ListItem trello={trello} drill={item} />
             ))}
-
             {isTodoFormOpen ? (
               <div className="z-10 bg-gray-500 border border-gray-500 absolute w-full h-full inset-0 bg-opacity-40 shadow-xl">
                 Modal
@@ -64,7 +59,6 @@ function List() {
                     onChange={(event) => setTodoText(event.target.value)}
                     placeholder="Enter a title for card"
                   ></input>
-
                   <input
                     type="date"
                     id="start"
