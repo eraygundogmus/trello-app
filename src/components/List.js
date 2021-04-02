@@ -52,7 +52,7 @@ function List() {
           <MdMoreHoriz/>
           <div>
             {myContext.trellos[trello].map((item) => (
-              <ListItem drill={item} />
+              <ListItem trello={trello} drill={item} />
             ))}
             <button
               onClick={() => setisTodoFormOpen(true)}

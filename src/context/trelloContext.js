@@ -14,7 +14,21 @@ const trelloReducer = (state, action) => {
       return {
         ...state,
         trellos: { ...state.trellos, [action.name] : []}
-      }
+      };
+      case "DELETE_ITEM":
+        const objKeys = Object.keys(state.trellos)
+        const find = objKeys.filter(key => key == action.parent)
+        const name = find[0]
+
+          return {
+          ...state,
+          trellos: {
+            ...state.trellos,
+            [name] : state.trellos[name].filter((i) => i.id !== action.payload)
+
+
+          }
+        }
     default:
       return state;
   }
