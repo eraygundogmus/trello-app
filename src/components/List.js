@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { trelloContext } from "../context/trelloContext";
 import ListItem from "./ListItem";
 import { v4 as uuidv4 } from "uuid";
+import { MdMoreHoriz } from "react-icons/md"
+
 
 function List() {
   const myContext = useContext(trelloContext);
@@ -10,9 +12,10 @@ function List() {
   const [isTodoFormOpen, setisTodoFormOpen] = useState(false);
   const [todoText, setTodoText] = useState("");
   const [todoDate, setTodoDate] = useState();
-  const [todoParent, setTodoParent] = useState();
+  const [ isNewListOpen, setisNewListOpen ] = useState(false)
+  const [newListName, setNewListName] = useState("")
 
-  console.log(myContext);
+  // console.log(myContext);
   const onSubmit = (event) => {
     event.preventDefault();
 
@@ -28,20 +31,34 @@ function List() {
       payload: newTodo,
     });
   };
+
+  const newCardSubmit = (event) => {
+    event.preventDefault();
+
+    const name = newListName
+    const newList = []
+    dispatch({
+      type: "ADD_LIST",
+      payload: newList,
+      name: name
+    })
+  }
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
       {obj.map((trello, index) => (
-        <div className="shadow-md rounded border border-gray-500 px-4">
-          <h2 className="font-bold ">{trello}</h2>
+        <div className="shadow-md rounded border border-gray-500 px-6">
+          <h2 className="font-bold py-2">{trello}</h2>
+          <MdMoreHoriz/>
           <div>
             {myContext.trellos[trello].map((item) => (
               <ListItem drill={item} />
             ))}
             <button
               onClick={() => setisTodoFormOpen(true)}
-              className="rounded-2xl bg-red-500 w-8"
+              className="main"
             >
-              +
+              Create card
             </button>
             {isTodoFormOpen ? (
               <div className="z-10 bg-gray-500 border border-gray-500 absolute w-full h-full inset-0 bg-opacity-40 shadow-xl">
@@ -63,7 +80,7 @@ function List() {
                     max="2022-12-31"
                     onChange={(event) => setTodoDate(event.target.value)}
                   ></input>
-                  <button type="submit  "> Submit</button>
+                  <button className="main" type="submit">Submit</button>
                   <button onClick={() => setisTodoFormOpen(false)}> X </button>
                 </form>
               </div>
@@ -71,6 +88,16 @@ function List() {
           </div>
         </div>
       ))}
+      <div><button className="main" onClick={() => setisNewListOpen(true)}> Add list</button></div>
+      {isNewListOpen ? 
+      (
+      <div className="z-10 bg-gray-500 border border-gray-500 absolute w-full h-full inset-0 bg-opacity-40 shadow-xl">
+        <form onSubmit={newCardSubmit}>
+        <input value={newListName} onChange={(event) => setNewListName(event.target.value)} placeholder="Enter list name"></input>
+        <button className="main" > Add</button>
+        </form>
+         <button className="main" onClick={() => setisNewListOpen(false)}>Close</button></div>) : 
+         null }
     </div>
   );
 }

@@ -8,8 +8,8 @@ function ListItem(props) {
   // Note : Members, tags, checklist, deadline
 
   return (
-    <div>
-      <p onClick={() => setisTodoOpen(true)}>{data.text}</p>
+    <div className="py-2">
+      <p onClick={() => setisTodoOpen(true)}>{data.text} {data.deadline ? data.deadline : null}</p>
       {isTodoOpen ? (
         <div className="z-10 bg-gray-500 border border-gray-500 absolute w-full h-full inset-0 bg-opacity-40 shadow-xl">
           <p>{data.text}</p>

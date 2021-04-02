@@ -1,4 +1,4 @@
-import "./App.css";
+
 import React from "react";
 import { TrelloProvider } from "./context/trelloContext";
 import List from "./components/List";

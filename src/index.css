@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.main {
+    @apply bg-green-800
+    text-white text-center 
+    p-2 rounded-xl
+    shadow-md
+}

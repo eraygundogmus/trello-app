@@ -10,6 +10,11 @@ const trelloReducer = (state, action) => {
           todo: [...state.trellos.todo, action.payload],
         },
       };
+      case "ADD_LIST": 
+      return {
+        ...state,
+        trellos: { ...state.trellos, [action.name] : []}
+      }
     default:
       return state;
   }
