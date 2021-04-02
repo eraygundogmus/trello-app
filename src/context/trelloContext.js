@@ -10,25 +10,36 @@ const trelloReducer = (state, action) => {
           todo: [...state.trellos.todo, action.payload],
         },
       };
-      case "ADD_LIST": 
+    case "ADD_LIST":
       return {
         ...state,
-        trellos: { ...state.trellos, [action.name] : []}
+        trellos: { ...state.trellos, [action.name]: [] },
       };
-      case "DELETE_ITEM":
-        const objKeys = Object.keys(state.trellos)
-        const find = objKeys.filter(key => key == action.parent)
-        const name = find[0]
+    case "DELETE_ITEM":
+      const objKeys = Object.keys(state.trellos);
+      const find = objKeys.filter((key) => key === action.parent);
+      const name = action.parent;
 
-          return {
-          ...state,
-          trellos: {
-            ...state.trellos,
-            [name] : state.trellos[name].filter((i) => i.id !== action.payload)
-
-
-          }
-        }
+      return {
+        ...state,
+        trellos: {
+          ...state.trellos,
+          [name]: state.trellos[name].filter((i) => i.id !== action.payload),
+        },
+      };
+    case "UPDATE_ITEM_TITLE":
+      const objKeys2 = Object.keys(state.trellos);
+      const find2 = objKeys2.filter((key) => key === action.parent);
+      const name2 = action.parent;
+      return {
+        ...state,
+        trellos: {
+          ...state.trellos,
+          [name2]: state.trellos[name2].map((todo, i) =>
+            todo.id === action.payload ? { ...todo, text: action.text } : todo
+          ),
+        },
+      };
     default:
       return state;
   }
