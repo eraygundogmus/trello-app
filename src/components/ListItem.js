@@ -3,22 +3,6 @@ import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { trelloContext } from "../context/trelloContext";
 import { MdDateRange } from "react-icons/md";
 
-// Note : Members, tags, checklist, deadline
-// Don't forget to add focus on text input
-// todos:
-// 1 : add details on popups, add members,tags etc. in a todo details (update initialState well-matched for this)
-// 2 : style everything
-// 3 : add other reducers =>
-// add - remove tag
-// add- change- update deadline
-// add - change - update members
-// 4 : check out for bugs
-// 5 : add drag&drop
-
-// extras:
-// 1: login- auth,
-// 2: checklist
-
 function ListItem(props) {
   const [isTodoOpen, setisTodoOpen] = useState(false);
   const { dispatch } = useContext(trelloContext);

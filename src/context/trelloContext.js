@@ -72,6 +72,11 @@ const initialState = {
       },
       { id: 3, text: "my a done" },
     ],
+
+    Done: [
+      { id: 554252561, text: "connect itemization summary page" },
+      { id: 135232313, text: "Deleting items from Itemized page" },
+    ],
   },
   members: {
     name: "Me",
