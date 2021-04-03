@@ -43,7 +43,6 @@ function List() {
 
   return (
     <div className="myGrid">
-      <TeamInfo />
       {obj.map((trello, index) => (
         <div className="myList">
           <div className="flex justify-between items-center	">
@@ -61,7 +60,7 @@ function List() {
             </div> */}
             {isTodoFormOpen ? (
               <div className="z-10 bg-gray-500 border border-gray-500 absolute w-full h-full inset-0 bg-opacity-30 shadow-xl">
-                <div className="bg-white rounded-xl items-center m-64 flex">
+                <div className="bg-white rounded-xl items-center mx-24 my-64 flex">
                   <form
                     className="justify-center flex w-full h-full"
                     onSubmit={onSubmit}
@@ -71,7 +70,7 @@ function List() {
                       required="required"
                       onChange={(event) => setTodoText(event.target.value)}
                       placeholder="Enter a title for card"
-                      className="px-2  w-full pr-2 rounded-xl  text-xs focus:outline-none focus:ring-1 ring-green-700 focus:border-green-500"
+                      className="px-6  w-full  min-w-min pr-2  rounded-xl  text-xs focus:outline-none focus:ring-1 ring-green-700 focus:border-green-500"
                     ></input>
                     <input
                       type="date"
@@ -80,7 +79,7 @@ function List() {
                       value={todoDate}
                       min="2021-01-01"
                       max="2022-12-31"
-                      className="w-full rounded-xl  text-xs focus:outline-none focus:ring-1 ring-green-700 focus:border-green-500"
+                      className="px-6 w-full rounded-xl min-w-min text-xs focus:outline-none focus:ring-1 ring-green-700 focus:border-green-500"
                       onChange={(event) => setTodoDate(event.target.value)}
                     ></input>
                     <button className="main" type="submit">
@@ -109,7 +108,7 @@ function List() {
       </div>
       {isNewListOpen ? (
         <div className="z-10 bg-gray-500 border border-gray-500 absolute w-full h-full inset-0 bg-opacity-30 shadow-xl">
-          <div className="bg-white rounded-xl items-center m-64 flex">
+          <div className="bg-white rounded-xl items-center  mx-24 my-64 flex">
             <form
               className="w-full justify-between flex h-full"
               onSubmit={newCardSubmit}
@@ -118,7 +117,7 @@ function List() {
                 value={newListName}
                 onChange={(event) => setNewListName(event.target.value)}
                 placeholder="Enter list name"
-                className="px-2 pr-2 rounded-xl w-full text-xs focus:outline-none focus:ring-1 ring-green-700 focus:border-green-500"
+                className="px-6 pr-2 rounded-xl w-full text-xs focus:outline-none focus:ring-1 ring-green-700 focus:border-green-500"
               ></input>
               <button className="main"> Add</button>
             </form>

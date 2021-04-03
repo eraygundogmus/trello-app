@@ -67,7 +67,7 @@ function ListItem(props) {
               placeholder={data.text}
               onChange={(event) => setEditText(event.target.value)}
               value={editText}
-              className="px-2 pr-2 rounded-xl w-full text-xs h-full focus:outline-none focus:ring-1 ring-green-700 focus:border-green-500"
+              className="px-2 pr-2  rounded-xl w-full text-xs h-full focus:outline-none focus:ring-1 ring-green-700 focus:border-green-500"
             ></input>
             <button type="submit" className="main">
               Save

@@ -5,24 +5,18 @@ import Avatar from "react-avatar";
 function TeamInfo() {
   const myContext = useContext(trelloContext);
   return (
-    <div className="bg-gray-50 mx-2 px-4 ">
-      <div className=" flex justify-center">
-        <div className="flex mt-1 max-w-xs">
-          <p className="py-2 text-gray-700 font-semibold px-12">
-            {myContext.name}
-          </p>
-        </div>
+    <div className="bg-gray-50 mx-2 px-4 flex p-4 mb-4">
+      <div className="items-center flex mr-4">
+        <p className="text-sm font-medium  text-gray-900 ">{myContext.name}</p>
       </div>
-      <div>
-        <p className="text-gray-500 font-semibold text-sm pb-2 pt-2 text-center">
-          Members
-        </p>
-        <div className="justify-center flex">
+      <div className="flex items-center">
+        <p className="text-gray-500 font-semibold text-sm pb-2 pt-2">Members</p>
+        <div className="flex ml-2">
           {myContext.members
             ? myContext.members.map((member) => (
                 <Avatar
                   name={member.name}
-                  className="cursor-pointer"
+                  className="cursor-pointer "
                   size="30"
                   textSizeRatio={2.5}
                   round={true}
@@ -39,11 +33,9 @@ function TeamInfo() {
           ></Avatar>
         </div>
       </div>
-      <div className="mt-2 items-center">
-        <p className="text-gray-500 text-sm pb-2 pt-2 font-semibold  text-center">
-          Tags
-        </p>
-        <div className="justify-center flex">
+      <div className="items-center flex ml-12">
+        <p className="text-gray-500 font-semibold text-sm pb-2 pt-2">Tags</p>
+        <div className="flex ml-2">
           {myContext.tags.map((tag) => (
             <div
               style={{ backgroundColor: tag.color }}

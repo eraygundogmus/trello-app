@@ -6,12 +6,12 @@ todos: \
 2 : style everything DONE
 
 Notes for style : \
- create forms PROCESS \
+ create forms DONE \
 open todo PROCESS
 
 Some style bugs to fix : \
 grid row heights \
-panel position should change. (top on grid) \
+panel position should change. (top on grid) FIXED \
 create cards should be single components
 
 3 : add other reducers => \
