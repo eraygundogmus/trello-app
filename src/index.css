@@ -11,6 +11,14 @@
     hover:bg-green-600;
 }
 
+.secondary {
+  @apply bg-green-700
+    text-white text-center 
+    py-1 px-2 rounded-xl
+    shadow-md
+    transition-all
+    hover:bg-green-600;
+}
 .single {
   @apply max-w-full items-center  hover:bg-green-300 rounded-xl;
 }
