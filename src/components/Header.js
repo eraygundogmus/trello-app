@@ -1,10 +1,7 @@
-import React, { useContext } from "react";
-import { trelloContext } from "../context/trelloContext";
-import Avatar from "react-avatar";
+import React from "react";
 import { DiTrello } from "react-icons/di";
 
 function Header() {
-  const myContext = useContext(trelloContext);
   return (
     <div className="container mx-auto h-auto bg-white mt-2 mb-8">
       <div className="flex items-center mt-4 justify-center">
