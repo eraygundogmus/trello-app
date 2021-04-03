@@ -16,8 +16,6 @@ const trelloReducer = (state, action) => {
         trellos: { ...state.trellos, [action.name]: [] },
       };
     case "DELETE_ITEM":
-      const objKeys = Object.keys(state.trellos);
-      const find = objKeys.filter((key) => key === action.parent);
       const name = action.parent;
       return {
         ...state,
@@ -27,8 +25,6 @@ const trelloReducer = (state, action) => {
         },
       };
     case "UPDATE_ITEM_TITLE":
-      const objKeys2 = Object.keys(state.trellos);
-      const find2 = objKeys2.filter((key) => key === action.parent);
       const name2 = action.parent;
       return {
         ...state,

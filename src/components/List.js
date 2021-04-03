@@ -40,9 +40,9 @@ function List() {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
+    <div className="myGrid">
       {obj.map((trello, index) => (
-        <div className="shadow-md rounded border bg-gray-100 px-4 ">
+        <div className="myList">
           <div className="flex justify-between items-center	">
             <h2 className="font-semibold py-2">{trello}</h2>
             <MdMoreHoriz />

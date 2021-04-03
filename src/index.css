@@ -3,8 +3,28 @@
 @tailwind utilities;
 
 .main {
-    @apply bg-green-800
+  @apply bg-green-800
     text-white text-center 
     p-2 rounded-xl
-    shadow-md
+    shadow-md;
+}
+
+.single {
+  @apply max-w-full items-center;
+}
+
+.single-open {
+  @apply bg-white flex rounded-xl  border border-gray-300 shadow my-1 relative;
+}
+
+.myGrid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-4;
+}
+
+.myHero {
+  @apply container mx-auto  text-base;
+}
+
+.myList {
+  @apply shadow-md rounded border bg-gray-100 px-4;
 }

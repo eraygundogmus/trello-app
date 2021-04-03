@@ -48,9 +48,9 @@ function ListItem(props) {
   };
 
   return (
-    <div className=" max-w-full items-center ">
+    <div className="single">
       {isEditOpen ? (
-        <div className="bg-white flex rounded-xl  border border-gray-300 shadow my-1 relative">
+        <div className="single-open">
           <div className="relative max-w-full">
             <p
               className=" p-2 pr-4 font-normal  text-sm text-left text-gray-700  break-words max-w-full	"
@@ -100,13 +100,37 @@ function ListItem(props) {
       )}
 
       {isTodoOpen ? (
-        <div className="z-10 bg-gray-500 border border-gray-500 absolute w-full h-full inset-0 bg-opacity-40 shadow-xl">
-          <p>{data.text}</p>
-          <AiFillDelete onClick={handleDeleteItem} />
-          {data.members
-            ? data.members.map((member) => <div>{member}</div>)
-            : null}
-          <button onClick={() => setisTodoOpen(false)}>X</button>
+        <div className="z-10 bg-gray-500 border border-gray-500 absolute w-full h-full inset-0 bg-opacity-30 shadow-xl">
+          <div className="bg-white items-center m-64">
+            <div className="relative">
+              <p className="text-center text-gray-700  font-semibold py-2">
+                {data.text}
+              </p>
+              <p className="text-center text-gray-700  text-sm font-light">
+                In the list: {props.trello}
+              </p>
+              <AiFillDelete onClick={handleDeleteItem} />
+              {data.members ? (
+                <div className="px-4 font-bold text-sm text-gray-700">
+                  Members
+                  {data.members
+                    ? data.members.map((member) => (
+                        <p className="text-gray-700 text-sm  font-normal">
+                          {member}
+                        </p>
+                      ))
+                    : null}
+                </div>
+              ) : null}
+
+              <button
+                className="absolute top-2 right-3 font-semibold	"
+                onClick={() => setisTodoOpen(false)}
+              >
+                X
+              </button>
+            </div>
+          </div>
         </div>
       ) : null}
     </div>
