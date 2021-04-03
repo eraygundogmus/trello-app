@@ -53,7 +53,7 @@ function ListItem(props) {
         <div className="bg-white flex rounded-xl  border border-gray-300 shadow my-1 relative">
           <div className="relative max-w-full">
             <p
-              className=" p-2 font-normal  text-left text-gray-700  break-words max-w-full	"
+              className=" p-2 pr-4 font-normal  text-sm text-left text-gray-700  break-words max-w-full	"
               onClick={() => setisTodoOpen(true)}
             >
               {data.text}
@@ -61,7 +61,7 @@ function ListItem(props) {
             {data.deadline ? (
               <div className="mx-2 mb-2 flex">
                 <MdDateRange className="fill-current text-green-700" />
-                <h4 className="px-1 text-left text-sm text-gray-600 break-words ">
+                <h4 className="px-1 text-left text-xs text-gray-600 break-words ">
                   {data.deadline}
                 </h4>
               </div>
@@ -86,7 +86,7 @@ function ListItem(props) {
               placeholder={data.text}
               onChange={(event) => setEditText(event.target.value)}
               value={editText}
-              className="px-2 pr-2 rounded-xl w-full  h-full focus:outline-none focus:ring-1 ring-green-700 focus:border-green-500"
+              className="px-2 pr-2 rounded-xl w-full text-xs h-full focus:outline-none focus:ring-1 ring-green-700 focus:border-green-500"
             ></input>
             <button type="submit" className="main">
               Save

@@ -7,7 +7,7 @@ const trelloReducer = (state, action) => {
         ...state,
         trellos: {
           ...state.trellos,
-          todo: [...state.trellos.todo, action.payload],
+          Enhancements: [...state.trellos.Enhancements, action.payload],
         },
       };
     case "ADD_LIST":
@@ -47,15 +47,32 @@ const trelloReducer = (state, action) => {
 const initialState = {
   name: "Eray Gundogmus",
   teamName: "Programmers",
+
   trellos: {
-    todo: [{ id: 1, text: "create a todo" }],
-    done: [
+    Enhancements: [
+      { id: 1, text: "xss attack prevention" },
+      { id: 13513, text: "Payee claim individual items" },
+      {
+        id: 35234523523,
+        text: "Item-breakdown in payor and payee summary view",
+      },
+      { id: 7657567567, text: "Cute item icons" },
+      {
+        id: 2323623632,
+        text: "Payee can choose to pay by payor, not whole trip",
+      },
+      {
+        id: "1241204asdfmdgm235",
+        text: "Payee can choose to pay by payor, not whole trip",
+        definition: "Google, facebook, braintree vemmo",
+      },
+    ],
+    Progress: [
       {
         id: 2,
         text: "create a done",
         members: ["Eray G", "Fatih U.", "Tarık G."],
         deadline: "2021-04-01",
-        tags: ["fast", "frontend", "ui"],
       },
       { id: 3, text: "my a done" },
     ],
@@ -63,6 +80,11 @@ const initialState = {
   members: {
     name: "Me",
   },
+  tags: [
+    { name: "frontend", color: "blue" },
+    { name: "backend", color: "green" },
+    { name: "system", color: "red" },
+  ],
 };
 
 export const trelloContext = createContext();
