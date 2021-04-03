@@ -1,14 +1,18 @@
 ### Todos
 
-Note : Members, tags, checklist, deadline \
 Don't forget to add focus on text input \
 todos: \
-1 : add details on popups, add members,tags etc. in a todo details (update initialState well-matched for this) \
-2 : style everything
+1 : add details on popups, add members,tags etc. in a todo details (update initialState well-matched for this) DONE \
+2 : style everything DONE
 
 Notes for style : \
- create forms \
-open todo
+ create forms PROCESS \
+open todo PROCESS
+
+Some style bugs to fix : \
+grid row heights \
+panel position should change. (top on grid) \
+create cards should be single components
 
 3 : add other reducers => \
 add - remove tag \
