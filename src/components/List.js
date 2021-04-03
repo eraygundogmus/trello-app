@@ -3,7 +3,6 @@ import { trelloContext } from "../context/trelloContext";
 import ListItem from "./ListItem";
 import { v4 as uuidv4 } from "uuid";
 import { MdMoreHoriz } from "react-icons/md";
-import TeamInfo from "./TeamInfo";
 
 function List() {
   const myContext = useContext(trelloContext);
