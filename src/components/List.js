@@ -3,6 +3,7 @@ import { trelloContext } from "../context/trelloContext";
 import ListItem from "./ListItem";
 import { v4 as uuidv4 } from "uuid";
 import { MdMoreHoriz } from "react-icons/md";
+import TeamInfo from "./TeamInfo";
 
 function List() {
   const myContext = useContext(trelloContext);
@@ -26,6 +27,7 @@ function List() {
       type: "ADD_TODO",
       payload: newTodo,
     });
+    setisTodoFormOpen(false);
   };
 
   const newCardSubmit = (event) => {
@@ -41,6 +43,7 @@ function List() {
 
   return (
     <div className="myGrid">
+      <TeamInfo />
       {obj.map((trello, index) => (
         <div className="myList">
           <div className="flex justify-between items-center	">
@@ -51,6 +54,11 @@ function List() {
             {myContext.trellos[trello].map((item) => (
               <ListItem trello={trello} drill={item} />
             ))}
+            {/*             <div className="single">
+              <div className="single-open">
+                <p className="text">Add new</p>
+              </div>
+            </div> */}
             {isTodoFormOpen ? (
               <div className="z-10 bg-gray-500 border border-gray-500 absolute w-full h-full inset-0 bg-opacity-40 shadow-xl">
                 Modal
@@ -80,11 +88,11 @@ function List() {
           </div>
         </div>
       ))}
-      <div>
-        <button onClick={() => setisTodoFormOpen(true)} className="main">
+      <div className="flex justify-center">
+        <button onClick={() => setisTodoFormOpen(true)} className="main m-2">
           Create card
         </button>
-        <button className="main" onClick={() => setisNewListOpen(true)}>
+        <button className="main m-2" onClick={() => setisNewListOpen(true)}>
           Create list
         </button>
       </div>

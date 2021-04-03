@@ -41,7 +41,7 @@ const trelloReducer = (state, action) => {
 };
 
 const initialState = {
-  name: "Chandler Bing",
+  name: "My Great Team",
 
   trellos: {
     Enhancements: [
@@ -96,9 +96,9 @@ const initialState = {
     },
   ],
   tags: [
-    { name: "frontend", color: "blue" },
-    { name: "backend", color: "green" },
-    { name: "system", color: "red" },
+    { name: "frontend", color: "#30838C" },
+    { name: "backend", color: "#F2CB05" },
+    { name: "system", color: "#F2D5CE" },
   ],
 };
 
