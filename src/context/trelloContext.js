@@ -41,8 +41,7 @@ const trelloReducer = (state, action) => {
 };
 
 const initialState = {
-  name: "Eray Gundogmus",
-  teamName: "Programmers",
+  name: "Chandler Bing",
 
   trellos: {
     Enhancements: [
@@ -78,9 +77,24 @@ const initialState = {
       { id: 135232313, text: "Deleting items from Itemized page" },
     ],
   },
-  members: {
-    name: "Me",
-  },
+  members: [
+    {
+      id: 13036334,
+      name: "Monica Galler",
+    },
+    {
+      id: 13036324242534,
+      name: "Phoebe Buffay",
+    },
+    {
+      id: 1303632362362372434,
+      name: "Ross Galler",
+    },
+    {
+      id: 130368569569656334,
+      name: "Rachel Green",
+    },
+  ],
   tags: [
     { name: "frontend", color: "blue" },
     { name: "backend", color: "green" },
@@ -98,6 +112,8 @@ export const TrelloProvider = (props) => {
       value={{
         name: state.name,
         trellos: state.trellos,
+        members: state.members,
+        tags: state.tags,
         dispatch,
       }}
     >

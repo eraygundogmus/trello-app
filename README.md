@@ -7,8 +7,8 @@ todos: \
 2 : style everything
 
 Notes for style : \
-Change background on todo text hover \
-Button hovers
+ create forms \
+open todo
 
 3 : add other reducers => \
 add - remove tag \

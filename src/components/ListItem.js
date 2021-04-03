@@ -36,10 +36,7 @@ function ListItem(props) {
       {isEditOpen ? (
         <div className="single-open">
           <div className="relative max-w-full">
-            <p
-              className=" p-2 pr-4 font-normal  text-sm text-left text-gray-700  break-words max-w-full	"
-              onClick={() => setisTodoOpen(true)}
-            >
+            <p className="text" onClick={() => setisTodoOpen(true)}>
               {data.text}
             </p>
             {data.deadline ? (
@@ -53,7 +50,7 @@ function ListItem(props) {
           </div>
           <div className="absolute top-3 right-2">
             <AiFillEdit
-              className="fill-current text-green-700"
+              className="fill-current cursor-pointer text-green-700"
               onClick={(event) => setisEditOpen(false)}
             />
           </div>

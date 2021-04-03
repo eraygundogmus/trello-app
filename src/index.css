@@ -6,19 +6,21 @@
   @apply bg-green-800
     text-white text-center 
     p-2 rounded-xl
-    shadow-md;
+    shadow-md
+    transition-all
+    hover:bg-green-600;
 }
 
 .single {
-  @apply max-w-full items-center;
+  @apply max-w-full items-center  hover:bg-green-300 rounded-xl;
 }
 
 .single-open {
-  @apply bg-white flex rounded-xl  border border-gray-300 shadow my-1 relative;
+  @apply bg-white flex rounded-xl  border border-gray-300 shadow my-1 relative hover:bg-green-300;
 }
 
 .myGrid {
-  @apply grid grid-cols-1 md:grid-cols-3 gap-4;
+  @apply grid  grid-cols-1 md:grid-cols-3 gap-4;
 }
 
 .myHero {
@@ -26,5 +28,9 @@
 }
 
 .myList {
-  @apply shadow-md rounded border bg-gray-100 px-4;
+  @apply shadow-md rounded border  bg-gray-100 px-4;
+}
+
+.text {
+  @apply p-2 pr-4 font-normal cursor-pointer  text-sm text-left text-gray-700  break-words max-w-full;
 }
