@@ -1,25 +1,27 @@
-###
+### Todos
 
-Note : Members, tags, checklist, deadline
-Don't forget to add focus on text input
-todos:
-1 : add details on popups, add members,tags etc. in a todo details (update initialState well-matched for this)
-2 : style everything
+Note : Members, tags, checklist, deadline \
+Don't forget to add focus on text input \
+todos: \
+1 : add details on popups, add members,tags etc. in a todo details (update initialState well-matched for this) \
+2 : style everything \
 
-Notes for style :
-Change background on todo text hover
-Button hovers
+Notes for style : \
+Change background on todo text hover \
+Button hovers \
 
-3 : add other reducers =>
-add - remove tag
-add- change- update deadline
-add - change - update members
-4 : check out for bugs
-5 : add drag&drop
+3 : add other reducers => \
+add - remove tag \
+add- change- update deadline \
+add - change - update members \
+4 : check out for bugs \
+5 : add drag&drop \
+6 : deploy project \
+7 : update readme.md \
 
-extras:
-1: login- auth,
-2: checklist
+extras: \
+1: login- auth, \
+2: checklist \
 
 # Getting Started with Create React App
 
