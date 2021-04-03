@@ -40,11 +40,13 @@ function List() {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
       {obj.map((trello, index) => (
-        <div className="shadow-md rounded border border-gray-500 px-6">
-          <h2 className="font-bold py-2">{trello}</h2>
-          <MdMoreHoriz />
+        <div className="shadow-md rounded border bg-gray-100 px-4 ">
+          <div className="flex justify-between items-center	">
+            <h2 className="font-semibold py-2">{trello}</h2>
+            <MdMoreHoriz />
+          </div>
           <div>
             {myContext.trellos[trello].map((item) => (
               <ListItem trello={trello} drill={item} />

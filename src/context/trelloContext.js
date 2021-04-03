@@ -54,7 +54,7 @@ const initialState = {
         id: 2,
         text: "create a done",
         members: ["Eray G", "Fatih U.", "Tarık G."],
-        deadline: "22.02.2222",
+        deadline: "2021-04-01",
         tags: ["fast", "frontend", "ui"],
       },
       { id: 3, text: "my a done" },

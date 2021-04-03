@@ -1,4 +1,3 @@
-
 import React from "react";
 import { TrelloProvider } from "./context/trelloContext";
 import List from "./components/List";
@@ -9,7 +8,7 @@ function App() {
     <TrelloProvider>
       <div className="App">
         {/*         <Header /> */}
-        <div className="container mx-auto bg-blue-100 text-base	">
+        <div className="container mx-auto  text-base	">
           <List />
         </div>
       </div>

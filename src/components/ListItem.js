@@ -1,9 +1,10 @@
 import React, { useState, useContext } from "react";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { trelloContext } from "../context/trelloContext";
+import { MdDateRange } from "react-icons/md";
 
 // Note : Members, tags, checklist, deadline
-
+// Don't forget to add focus on text input
 // todos:
 // 1 : add details on popups, add members,tags etc. in a todo details (update initialState well-matched for this)
 // 2 : style everything
@@ -47,26 +48,54 @@ function ListItem(props) {
   };
 
   return (
-    <div className="py-2">
+    <div className=" max-w-full items-center ">
       {isEditOpen ? (
-        <div>
-          <p onClick={() => setisTodoOpen(true)}>
-            {data.text} {data.deadline ? data.deadline : null}
-          </p>
-          <AiFillEdit onClick={(event) => setisEditOpen(false)} />
+        <div className="bg-white flex rounded-xl  border border-gray-300 shadow my-1 relative">
+          <div className="relative max-w-full">
+            <p
+              className=" p-2 font-normal  text-left text-gray-700  break-words max-w-full	"
+              onClick={() => setisTodoOpen(true)}
+            >
+              {data.text}
+            </p>
+            {data.deadline ? (
+              <div className="mx-2 mb-2 flex">
+                <MdDateRange className="fill-current text-green-700" />
+                <h4 className="px-1 text-left text-sm text-gray-600 break-words ">
+                  {data.deadline}
+                </h4>
+              </div>
+            ) : null}
+          </div>
+          <div className="absolute top-3 right-2">
+            <AiFillEdit
+              className="fill-current text-green-700"
+              onClick={(event) => setisEditOpen(false)}
+            />
+          </div>
         </div>
       ) : (
-        <div>
-          <form onSubmit={handleEditForm}>
+        <div className="bg-white flex rounded-xl  border border-gray-300 shadow my-1 relative ">
+          <form
+            className="w-full justify-between flex"
+            onSubmit={handleEditForm}
+          >
             <input
               type="text"
-              placeholder="something"
+              required="required"
+              placeholder={data.text}
               onChange={(event) => setEditText(event.target.value)}
               value={editText}
+              className="px-2 pr-2 rounded-xl w-full  h-full focus:outline-none focus:ring-1 ring-green-700 focus:border-green-500"
             ></input>
-            <button className="main">Save</button>
+            <button type="submit" className="main">
+              Save
+            </button>
           </form>
-          <button onClick={(event) => setisEditOpen(true)}>Close</button>
+
+          <button className="px-3" onClick={(event) => setisEditOpen(true)}>
+            X
+          </button>
         </div>
       )}
 
