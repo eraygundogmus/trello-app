@@ -20,7 +20,7 @@
     hover:bg-green-600;
 }
 .single {
-  @apply max-w-full items-center  hover:bg-green-300 rounded-xl;
+  @apply max-w-full items-center cursor-move	  hover:bg-green-300 rounded-xl;
 }
 
 .single-open {
