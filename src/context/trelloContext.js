@@ -56,16 +56,19 @@ const trelloReducer = (state, action) => {
       };
 
     case "REORDER_LIST":
-      console.log(action.parent, action.payload, action.dest, action.id);
-      const copy = state.trellos[action.parent][action.payload];
-      console.log(copy);
+      const copySource = state.trellos[action.parent][action.payload];
+      const copyDest = state.trellos[action.parent][action.dest];
 
       return update(state, {
         trellos: {
-          [action.parent]: { $splice: [[action.payload, 1]] },
+          [action.parent]: {
+            [action.dest]: { $set: copySource },
+            [action.payload]: { $set: copyDest },
+          },
         },
       });
 
+    // 2 kopya al, birbirine set et.
     default:
       return state;
   }
@@ -90,7 +93,7 @@ const initialState = {
     ],
     Progress: [
       {
-        id: 6,
+        id: 623,
         text: "create a done",
         members: ["Eray G", "Fatih U.", "Tarık G."],
         deadline: "2021-04-01",

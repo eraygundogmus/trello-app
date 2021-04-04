@@ -43,12 +43,12 @@ function ListItem(props) {
   };
 
   return (
-    <Draggable draggableId={`${data.id}`} index={props.i}>
+    <Draggable draggableId={`${data.id}`} key={data.id} index={props.i}>
       {(provided) => (
         <div
+          ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
-          ref={provided.innerRef}
           className="single"
         >
           {isEditOpen ? (

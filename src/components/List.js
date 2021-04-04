@@ -45,9 +45,8 @@ function List() {
     setisNewListOpen(false);
   };
 
-  const onDragEnd = async (result) => {
+  const onDragEnd = (result) => {
     const { destination, source, draggableId } = result;
-    console.log("from", source, "destination", destination, draggableId);
 
     if (!destination) {
       // if destination is null
@@ -57,14 +56,17 @@ function List() {
     if (source.droppableId == destination.droppableId) {
       obj.map((trello, index) => {
         if (index == source.droppableId) {
-          const parentName2 = trello;
-
-          dispatch({
+          let parentName2 = trello;
+          let sourceList = myContext.trellos[parentName2];
+          let dragginItem = sourceList.filter((i) => i.id == draggableId)[0];
+          sourceList.splice(source.index, 1);
+          sourceList.splice(destination.index, 0, dragginItem);
+          /*           dispatch({
             type: "REORDER_LIST",
             payload: source.index,
             dest: destination.index,
             parent: parentName2,
-          });
+          }); */
         }
       });
     }
@@ -139,7 +141,6 @@ function List() {
                         </button>
                       </form>
                     </div>
-                    {provided.placeholder}
                   </div>
                 ) : null}
               </div>
