@@ -12,7 +12,6 @@ function ListItem(props) {
   const [upDate, setupDate] = useState();
 
   const data = props.drill;
-
   const handleEditForm = (event) => {
     event.preventDefault();
     dispatch({
@@ -44,7 +43,7 @@ function ListItem(props) {
   };
 
   return (
-    <Draggable draggableId={`${data.id}ahaha`} index={data.id}>
+    <Draggable draggableId={`${data.id}`} index={props.i}>
       {(provided) => (
         <div
           {...provided.draggableProps}

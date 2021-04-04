@@ -45,16 +45,36 @@ function List() {
     setisNewListOpen(false);
   };
 
-  const onDragEnd = (result) => {
+  const onDragEnd = async (result) => {
     const { destination, source, draggableId } = result;
-    console.log("destionation", destination, "source", source, draggableId);
+    console.log("from", source, "destination", destination, draggableId);
+
+    if (!destination) {
+      // if destination is null
+      return;
+    }
+
+    if (source.droppableId == destination.droppableId) {
+      obj.map((trello, index) => {
+        if (index == source.droppableId) {
+          const parentName2 = trello;
+
+          dispatch({
+            type: "REORDER_LIST",
+            payload: source.index,
+            dest: destination.index,
+            parent: parentName2,
+          });
+        }
+      });
+    }
   };
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="myGrid">
         {obj.map((trello, index) => (
-          <Droppable droppableId={index}>
+          <Droppable droppableId={index} name={trello}>
             {(provided) => (
               <div
                 className="myList"
@@ -66,7 +86,7 @@ function List() {
                   <MdMoreHoriz />
                 </div>
                 {myContext.trellos[trello].map((item, i) => (
-                  <ListItem trello={trello} drill={item} />
+                  <ListItem i={i} trello={trello} drill={item} />
                 ))}
                 {isTodoFormOpen ? (
                   <div className="z-10 bg-gray-500 border border-gray-500 absolute w-full h-full inset-0 bg-opacity-30 shadow-xl">
@@ -119,6 +139,7 @@ function List() {
                         </button>
                       </form>
                     </div>
+                    {provided.placeholder}
                   </div>
                 ) : null}
               </div>
