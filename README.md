@@ -3,7 +3,7 @@
 Don't forget to add focus on text input \
 todos: \
 1 : add details on popups, add members,tags etc. in a todo details (update initialState well-matched for this) DONE \
-2 : style everything DONE
+2 : style everything PROCESS
 
 Notes for style : \
  create forms DONE \
@@ -19,8 +19,9 @@ add card on any list DONE \
 add - remove tag \
 add- update deadline DONE \
 add - remove members ADD DONE - REMOVE PROCESS \
-4 : check out for bugs \
-5 : add drag&drop PROCESS \
+4 : check out for bugs PROCESS \
+popups should be independent from droppable items \
+5 : add drag&drop DONE \
 6 : deploy project DONE \
 7 : update readme.md
 
