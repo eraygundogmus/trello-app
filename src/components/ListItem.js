@@ -40,6 +40,7 @@ function ListItem(props) {
       parent: props.trello,
       deadline: upDate,
     });
+    setisTodoOpen(false);
   };
 
   return (
