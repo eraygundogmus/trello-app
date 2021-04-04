@@ -56,11 +56,6 @@ const initialState = {
         id: 2323623632,
         text: "Payee can choose to pay by payor, not whole trip",
       },
-      {
-        id: "1241204asdfmdgm235",
-        text: "Payee can choose to pay by payor, not whole trip",
-        definition: "Google, facebook, braintree vemmo",
-      },
     ],
     Progress: [
       {
@@ -85,14 +80,6 @@ const initialState = {
     {
       id: 13036324242534,
       name: "Phoebe Buffay",
-    },
-    {
-      id: 1303632362362372434,
-      name: "Ross Galler",
-    },
-    {
-      id: 130368569569656334,
-      name: "Rachel Green",
     },
   ],
   tags: [

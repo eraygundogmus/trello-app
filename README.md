@@ -16,11 +16,11 @@ create cards should be single components
 
 3 : add other reducers => \
 add - remove tag \
-add- change- update deadline \
-add - change - update members \
+add- update deadline \
+add - remove - update members \
 4 : check out for bugs \
 5 : add drag&drop \
-6 : deploy project \
+6 : deploy project \ DONE
 7 : update readme.md
 
 extras: \
