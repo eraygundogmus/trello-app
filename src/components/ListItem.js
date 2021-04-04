@@ -44,7 +44,7 @@ function ListItem(props) {
 
   return (
     <Draggable
-      draggableId={`droppable${data.id}`}
+      draggableId={`draggable${data.id}`}
       key={data.id}
       index={props.i}
     >

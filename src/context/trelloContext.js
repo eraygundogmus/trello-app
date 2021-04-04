@@ -55,20 +55,23 @@ const trelloReducer = (state, action) => {
         members: [...state.members, action.new],
       };
 
-    case "REORDER_LIST":
-      const copySource = state.trellos[action.parent][action.payload];
-      const copyDest = state.trellos[action.parent][action.dest];
-
+    case "MOVE_ITEM_SAME_LIST":
+      const parentName = action.parent;
       return update(state, {
         trellos: {
-          [action.parent]: {
-            [action.dest]: { $set: copySource },
-            [action.payload]: { $set: copyDest },
-          },
+          [parentName]: { $set: action.payload },
+        },
+      });
+    case "MOVE_ITEM_OTHER_LIST":
+      const parent1 = action.dest;
+      const parent2 = action.src;
+      return update(state, {
+        trellos: {
+          [parent1]: { $set: action.payload2 },
+          [parent2]: { $set: action.payload },
         },
       });
 
-    // 2 kopya al, birbirine set et.
     default:
       return state;
   }

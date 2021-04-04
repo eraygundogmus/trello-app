@@ -47,18 +47,60 @@ function List() {
 
   const onDragEnd = (result) => {
     const { destination, source, draggableId } = result;
-
+    // If drag item in somewhere unrelated
     if (!destination) {
-      console.log("null");
       return;
     }
 
+    // If drag item in same list
+
     if (source.droppableId === destination.droppableId) {
-      console.log("equal");
+      const itemId = draggableId.slice(9);
+      const id = source.droppableId;
+
+      const parentName = document.getElementById(id).attributes[4].value;
+
+      const sourceList = myContext.trellos[parentName];
+
+      const draggingItem = sourceList.filter((i) => i.id === itemId)[0];
+
+      sourceList.splice(source.index, 1);
+      sourceList.splice(destination.index, 0, draggingItem);
+
+      dispatch({
+        type: "MOVE_ITEM_SAME_LIST",
+        payload: sourceList,
+        parent: parentName,
+      });
+
+      // DONE
     }
 
-    if (source.droppableId !== destination.droppableId)
-      console.log("different list");
+    // If drag item other list
+    if (source.droppableId !== destination.droppableId) {
+      const myItemId = draggableId.slice(9);
+      const destId = destination.droppableId;
+      const destParent = document.getElementById(destId).attributes[4].value;
+      const destinationList = myContext.trellos[destParent];
+
+      const sourceId = source.droppableId;
+      const sourceParent = document.getElementById(sourceId).attributes[4]
+        .value;
+      const sourceList = myContext.trellos[sourceParent];
+      const mydraggingItem = sourceList.filter((i) => i.id === myItemId)[0];
+
+      sourceList.splice(source.index, 1);
+      destinationList.splice(destination.index, 0, mydraggingItem);
+
+      dispatch({
+        type: "MOVE_ITEM_OTHER_LIST",
+        payload: sourceList,
+        payload2: destinationList,
+        dest: destParent,
+        src: sourceParent,
+      });
+      // DONE!
+    }
   };
 
   return (
@@ -75,6 +117,8 @@ function List() {
                 className="myList"
                 {...provided.droppableProps}
                 ref={provided.innerRef}
+                id={`${index}+42`}
+                name={trello}
               >
                 <div className="flex justify-between items-center	">
                   <h2 className="font-semibold py-2">{trello}</h2>
