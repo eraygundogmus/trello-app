@@ -43,7 +43,11 @@ function ListItem(props) {
   };
 
   return (
-    <Draggable draggableId={`${data.id}`} key={data.id} index={props.i}>
+    <Draggable
+      draggableId={`droppable${data.id}`}
+      key={data.id}
+      index={props.i}
+    >
       {(provided) => (
         <div
           ref={provided.innerRef}

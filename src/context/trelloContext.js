@@ -85,11 +85,6 @@ const initialState = {
         id: "3",
         text: "Item-breakdown in payor and payee summary view",
       },
-      { id: "4", text: "Cute item icons" },
-      {
-        id: "5",
-        text: "Payee can choose to pay by payor, not whole trip",
-      },
     ],
     Progress: [
       {
