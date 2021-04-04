@@ -79,40 +79,40 @@ const initialState = {
 
   trellos: {
     Enhancements: [
-      { id: 1, text: "xss attack prevention" },
-      { id: 2, text: "Payee claim individual items" },
+      { id: "1", text: "xss attack prevention" },
+      { id: "2", text: "Payee claim individual items" },
       {
-        id: 3,
+        id: "3",
         text: "Item-breakdown in payor and payee summary view",
       },
-      { id: 4, text: "Cute item icons" },
+      { id: "4", text: "Cute item icons" },
       {
-        id: 5,
+        id: "5",
         text: "Payee can choose to pay by payor, not whole trip",
       },
     ],
     Progress: [
       {
-        id: 623,
+        id: "623",
         text: "create a done",
         members: ["Eray G", "Fatih U.", "Tarık G."],
         deadline: "2021-04-01",
       },
-      { id: 7, text: "my a done" },
+      { id: "7", text: "my a done" },
     ],
 
     Done: [
-      { id: 8, text: "connect itemization summary page" },
-      { id: 9, text: "Deleting items from Itemized page" },
+      { id: "8", text: "connect itemization summary page" },
+      { id: "9", text: "Deleting items from Itemized page" },
     ],
   },
   members: [
     {
-      id: 10,
+      id: "10",
       name: "Monica Galler",
     },
     {
-      id: 11,
+      id: "11",
       name: "Phoebe Buffay",
     },
   ],

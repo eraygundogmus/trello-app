@@ -53,14 +53,15 @@ function List() {
       return;
     }
 
-    if (source.droppableId == destination.droppableId) {
+    if (source.droppableId === destination.droppableId) {
       obj.map((trello, index) => {
-        if (index == source.droppableId) {
+        if (index === source.droppableId) {
           let parentName2 = trello;
           let sourceList = myContext.trellos[parentName2];
-          let dragginItem = sourceList.filter((i) => i.id == draggableId)[0];
+          let dragginItem = sourceList.filter((i) => i.id === draggableId)[0];
           sourceList.splice(source.index, 1);
           sourceList.splice(destination.index, 0, dragginItem);
+
           /*           dispatch({
             type: "REORDER_LIST",
             payload: source.index,
@@ -68,6 +69,7 @@ function List() {
             parent: parentName2,
           }); */
         }
+        return index;
       });
     }
   };
@@ -76,7 +78,11 @@ function List() {
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="myGrid">
         {obj.map((trello, index) => (
-          <Droppable droppableId={index} name={trello}>
+          <Droppable
+            droppableId={index}
+            key={`${trello}${index}`}
+            name={trello}
+          >
             {(provided) => (
               <div
                 className="myList"
