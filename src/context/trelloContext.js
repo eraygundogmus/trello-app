@@ -48,6 +48,11 @@ const trelloReducer = (state, action) => {
           ),
         },
       };
+    case "ADD_MEMBER":
+      return {
+        ...state,
+        members: [...state.members, action.new],
+      };
     default:
       return state;
   }

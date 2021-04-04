@@ -18,7 +18,7 @@ create cards should be single components
 add card on any list DONE \
 add - remove tag \
 add- update deadline DONE \
-add - remove - update members \
+add - remove members ADD DONE - REMOVE PROCESS \
 4 : check out for bugs \
 5 : add drag&drop \
 6 : deploy project DONE \
