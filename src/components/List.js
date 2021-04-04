@@ -13,9 +13,11 @@ function List() {
   const [todoDate, setTodoDate] = useState();
   const [isNewListOpen, setisNewListOpen] = useState(false);
   const [newListName, setNewListName] = useState("");
+  const [parentName, setParentName] = useState(obj[0]);
 
   const onSubmit = (event) => {
     event.preventDefault();
+
     const newTodo = {
       id: uuidv4(),
       text: todoText,
@@ -25,6 +27,7 @@ function List() {
     dispatch({
       type: "ADD_TODO",
       payload: newTodo,
+      parent: parentName,
     });
     setisTodoFormOpen(false);
   };
@@ -81,6 +84,20 @@ function List() {
                       className="px-6 w-full rounded-xl min-w-min text-xs focus:outline-none focus:ring-1 ring-green-700 focus:border-green-500"
                       onChange={(event) => setTodoDate(event.target.value)}
                     ></input>
+                    <select
+                      onChange={(event) => setParentName(event.target.value)}
+                      value={parentName}
+                      name="parent"
+                      id="parent"
+                      required="required"
+                    >
+                      <option disabled selected>
+                        Select a list
+                      </option>
+                      {obj.map((trello) => (
+                        <option>{trello}</option>
+                      ))}
+                    </select>
                     <button className="main" type="submit">
                       Submit
                     </button>

@@ -15,12 +15,13 @@ panel position should change. (top on grid) FIXED \
 create cards should be single components
 
 3 : add other reducers => \
+add card on any list \ DONE
 add - remove tag \
 add- update deadline \
 add - remove - update members \
 4 : check out for bugs \
 5 : add drag&drop \
-6 : deploy project \ DONE
+6 : deploy project DONE \
 7 : update readme.md
 
 extras: \

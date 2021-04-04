@@ -7,7 +7,7 @@ const trelloReducer = (state, action) => {
         ...state,
         trellos: {
           ...state.trellos,
-          Enhancements: [...state.trellos.Enhancements, action.payload],
+          [action.parent]: [...state.trellos[action.parent], action.payload],
         },
       };
     case "ADD_LIST":
