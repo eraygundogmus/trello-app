@@ -17,7 +17,7 @@ create cards should be single components
 3 : add other reducers => \
 add card on any list DONE \
 add - remove tag \
-add- update deadline \
+add- update deadline DONE \
 add - remove - update members \
 4 : check out for bugs \
 5 : add drag&drop \

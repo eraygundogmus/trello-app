@@ -8,6 +8,7 @@ function ListItem(props) {
   const { dispatch } = useContext(trelloContext);
   const [isEditOpen, setisEditOpen] = useState(true);
   const [editText, setEditText] = useState("");
+  const [upDate, setupDate] = useState();
 
   const data = props.drill;
 
@@ -29,6 +30,16 @@ function ListItem(props) {
       parent: props.trello,
     });
     setisTodoOpen(false);
+  };
+
+  const upDateForm = (event) => {
+    event.preventDefault();
+    dispatch({
+      type: "UPDATE_ITEM_DEADLINE",
+      payload: props.drill.id,
+      parent: props.trello,
+      deadline: upDate,
+    });
   };
 
   return (
@@ -67,6 +78,7 @@ function ListItem(props) {
               placeholder={data.text}
               onChange={(event) => setEditText(event.target.value)}
               value={editText}
+              required="required"
               className="px-2 pr-2  rounded-xl w-full text-xs h-full focus:outline-none focus:ring-1 ring-green-700 focus:border-green-500"
             ></input>
             <button type="submit" className="main">
@@ -90,6 +102,25 @@ function ListItem(props) {
               <p className="text-center text-gray-700  text-sm font-light">
                 In the list: {props.trello}
               </p>
+              <form
+                className="justify-center flex w-full h-full"
+                onSubmit={upDateForm}
+              >
+                <input
+                  type="date"
+                  id="start"
+                  name="trip-start"
+                  required="required"
+                  value={upDate}
+                  min="2021-01-01"
+                  max="2022-12-31"
+                  className="px-6 w-full rounded-xl min-w-min text-xs focus:outline-none focus:ring-1 ring-green-700 focus:border-green-500"
+                  onChange={(event) => setupDate(event.target.value)}
+                ></input>
+                <button type="submit" className="main">
+                  Update
+                </button>
+              </form>
               <AiFillDelete onClick={handleDeleteItem} />
               {data.members ? (
                 <div className="px-4 font-bold text-sm text-gray-700">

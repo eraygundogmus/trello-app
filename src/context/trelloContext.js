@@ -35,6 +35,19 @@ const trelloReducer = (state, action) => {
           ),
         },
       };
+    case "UPDATE_ITEM_DEADLINE":
+      const parent = action.parent;
+      return {
+        ...state,
+        trellos: {
+          ...state.trellos,
+          [parent]: state.trellos[parent].map((todo, i) =>
+            todo.id === action.payload
+              ? { ...todo, deadline: action.deadline }
+              : todo
+          ),
+        },
+      };
     default:
       return state;
   }
