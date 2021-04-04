@@ -26,7 +26,8 @@ add - remove - update members \
 
 extras: \
 1: login- auth, \
-2: checklist
+2: checklist \
+3: dark theme
 
 # Getting Started with Create React App
 
