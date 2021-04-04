@@ -41,6 +41,7 @@ function List() {
       payload: newList,
       name: name,
     });
+    setisNewListOpen(false);
   };
 
   return (
